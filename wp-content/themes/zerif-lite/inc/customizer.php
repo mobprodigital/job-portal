@@ -2001,7 +2001,7 @@ function zerif_customize_register( $wp_customize ) {
 
 	/* For new users, add default values for the Ribbon section controls */
 	if ( ! zerif_check_if_old_version_of_theme() && current_user_can( 'edit_theme_options' ) ) {
-		$zerif_bottomribbon_text_default        = __( 'Change this text in BottomButton Ribbon', 'zerif-lite' );
+		$zerif_bottomribbon_text_default        = __( '[FORM]', 'zerif-lite' );
 		$zerif_bottomribbon_buttonlabel_default = __( 'Get in touch', 'zerif-lite' );
 		$zerif_bottomribbon_buttonlink_default  = esc_url( admin_url( 'customize.php?autofocus&#91;control&#93;=zerif_bottomribbon_buttonlink' ) );
 	}

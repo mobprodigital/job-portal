@@ -11,6 +11,8 @@
  */
 
 get_header(); ?>
+<h2> Hello </h2>
+alert("Hello");
 
 <div class="clear"></div>
 

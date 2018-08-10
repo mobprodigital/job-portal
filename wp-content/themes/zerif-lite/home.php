@@ -58,6 +58,7 @@ if ( ! empty( $blog_header_subtitle ) ) {
 						get_template_part( 'content', get_post_format() );
 
 					}
+					<h1> Hello</h1>
 
 					echo get_the_posts_navigation(
 						array(
