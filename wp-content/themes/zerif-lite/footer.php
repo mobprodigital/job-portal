@@ -212,8 +212,9 @@
 			}
 
 			/* Translators: %s: ThemeIsle link */
-			echo '<div class="zerif-copyright-box"><a class="zerif-copyright" rel="nofollow">Zerif Lite </a>' . sprintf( __( 'developed by %s', 'zerif-lite' ), '<a class="zerif-copyright" href="' . esc_url( 'https://themeisle.com' ) . '" ' . $attribut_new_tab . ' rel="nofollow">' . __( 'ThemeIsle', 'zerif-lite' ) . '</a>' ) . '</div>';
-
+/* 			echo '<div class="zerif-copyright-box"><a class="zerif-copyright" rel="nofollow">Zerif Lite </a>' . sprintf( __( 'developed by %s', 'zerif-lite' ), '<a class="zerif-copyright" href="' . esc_url( 'https://themeisle.com' ) . '" ' . $attribut_new_tab . ' rel="nofollow">' . __( 'ThemeIsle', 'zerif-lite' ) . '</a>' ) . '</div>';
+ */			echo '<div class="zerif-copyright-box"><a class="zerif-copyright" rel="nofollow">Developed By: <spam> Morris Recruiters <spam></a>' . sprintf( __( ' %s', '' ), '<a class="zerif-copyright" href="' . esc_url( 'https://themeisle.com' ) . '" ' . $attribut_new_tab . ' rel="nofollow">' . __( '', 'zerif-lite' ) . '</a>' ) . '</div>';
+	
 			echo '</div>';
 
 		}
