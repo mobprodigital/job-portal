@@ -2245,8 +2245,10 @@ small {
   }
   
   .box {
-    display: table-cell;
-    text-align: center;
+	display: table-cell;
+	box-sizing: border-box;
+	text-align: center;
+	width: 25%;
     vertical-align: middle;
     border: 1px solid darkgray;
     border-bottom: 1px solid darkgray;
@@ -2268,15 +2270,33 @@ small {
 .featured-jobs>img{
 	width: 100%;	
 }
-.featured-jobs-metadata>h4, p{
-		text-align: left;
-		padding-top: 15px;
-		padding-left: 15px;
+.featured-jobs-metadata {
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 15px;
 }
 .jobs-listing-title {
     text-align: left;
 }
+.company-header {
+	color: white;
+	padding-bottom: 25px;
+}
+span#zerif_testim-widget-1, span#zerif_testim-widget-2, span#zerif_testim-widget-3 {
+    height: 270px;
+}
 
+.about-clients{
+	display: contents;
+}
+.home-about-section{
+	padding-top: 10px;
+}
+.job-listing-team {
+    padding-top: 10px !important;
+    padding-bottom: 66px !important;
+    background: #fff;
+}	
 /* Custom CSS END FOR FRONT PAGE */
 
 

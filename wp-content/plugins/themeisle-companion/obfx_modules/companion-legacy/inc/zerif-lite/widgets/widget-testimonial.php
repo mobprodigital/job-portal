@@ -72,7 +72,7 @@ if ( ! class_exists( 'zerif_testimonial_widget' ) ) {
 
 				<div class="quote red-text">
 
-					<i class="fa fa-quote-left"></i>
+				<!-- 	<i class="fa fa-quote-left"></i> -->
 
 				</div>
 

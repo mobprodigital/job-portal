@@ -1,0 +1,68 @@
+<?php
+/**
+ * Testimonials section
+ *
+ * @package zerif-lite
+ */
+
+zerif_before_testimonials_trigger();
+
+$zerif_testimonials_show = get_theme_mod( 'zerif_testimonials_show' );
+
+echo '<section class="testimonial ' . ( ( is_customize_preview() && ( ! isset( $zerif_testimonials_show ) || $zerif_testimonials_show == 1 ) ) ? ' zerif_hidden_if_not_customizer ' : '' ) . '" id="testimonials">';
+
+	zerif_top_testimonials_trigger();
+
+	echo '<div class="container">';
+
+		echo '<div class="section-header company-header">';
+
+			/* Title */
+               echo '<h2> Features </h2>';
+
+			/* Subtitle */
+            echo '<p> We put our best foot forward to shape your professional life, we connect you to the best companies which will be ideal as per your talent and skills.  </p>';
+		echo '</div>';
+
+		echo '<div class="row" data-scrollreveal="enter right after 0s over 1s">';
+
+			echo '<div class="col-md-12">';
+
+				$pinterest_style                    = '';
+				$zerif_testimonials_pinterest_style = get_theme_mod( 'zerif_testimonials_pinterest_style' );
+if ( isset( $zerif_testimonials_pinterest_style ) && $zerif_testimonials_pinterest_style != 0 ) {
+	$pinterest_style = 'testimonial-masonry';
+}
+
+				echo '<div id="client-feedbacks" class="owl-carousel owl-theme ' . $pinterest_style . ' ">';
+
+if ( is_active_sidebar( 'sidebar-testimonials' ) ) {
+
+	dynamic_sidebar( 'sidebar-testimonials' );
+
+} elseif ( current_user_can( 'edit_theme_options' ) ) {
+
+	if ( is_customize_preview() ) {
+		/* translators: Testimonials section */
+		printf( __( 'Add widgets in this area by going to the %s', 'zerif-lite' ), __( 'Testimonials section', 'zerif-lite' ) );
+	} else {
+		/* translators: Testimonials section link in customizer */
+		printf( __( 'Add widgets in this area by going to the %s', 'zerif-lite' ), sprintf( '<a href="%1$s" class="zerif-default-links">%2$s</a>', esc_url( admin_url( 'customize.php?autofocus&#91;section&#93;=sidebar-widgets-sidebar-testimonials' ) ), __( 'Testimonials section', 'zerif-lite' ) ) );
+	}
+}
+
+				echo '</div>';
+
+			echo '</div>';
+
+		echo '</div>';
+
+	echo '</div>';
+
+	zerif_bottom_testimonials_trigger();
+
+echo '</section>';
+
+zerif_after_testimonials_trigger();
+
+

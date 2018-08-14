@@ -9,7 +9,7 @@ zerif_before_about_us_trigger();
 
 $zerif_aboutus_show = get_theme_mod( 'zerif_aboutus_show' );
 
-echo '<section class="about-us ' . ( ( is_customize_preview() && ( ! isset( $zerif_aboutus_show ) || $zerif_aboutus_show == 1 ) ) ? ' zerif_hidden_if_not_customizer ' : '' ) . '" id="aboutus">';
+echo '<section class="about-us home-about-section' . ( ( is_customize_preview() && ( ! isset( $zerif_aboutus_show ) || $zerif_aboutus_show == 1 ) ) ? ' zerif_hidden_if_not_customizer ' : '' ) . '" id="aboutus">';
 
 ?>
 
@@ -52,7 +52,7 @@ echo '<section class="about-us ' . ( ( is_customize_preview() && ( ! isset( $zer
 			/* translators: About use section in customizer */
 			$zerif_aboutus_text_default = sprintf( __( 'Change this text in %s', 'zerif-lite' ), __( 'About us section', 'zerif-lite' ) );
 		if ( defined( 'THEMEISLE_COMPANION_VERSION' ) ) {
-			$zerif_aboutus_text_default = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.';
+			$zerif_aboutus_text_default = '';
 		}
 		if ( current_user_can( 'edit_theme_options' ) ) {
 			$zerif_aboutus_text = get_theme_mod( 'zerif_aboutus_text', $zerif_aboutus_text_default );
@@ -312,7 +312,7 @@ if ( ! empty( $zerif_aboutus_feature4_nr ) || ! empty( $zerif_aboutus_feature4_t
 
 		$zerif_aboutus_clients_title_text = get_theme_mod( 'zerif_aboutus_clients_title_text' );
 
-		echo '<div class="our-clients">';
+		echo '<div class="our-clients about-clients">';
 
 		if ( ! empty( $zerif_aboutus_clients_title_text ) ) {
 
@@ -326,7 +326,7 @@ if ( ! empty( $zerif_aboutus_feature4_nr ) || ! empty( $zerif_aboutus_feature4_t
 
 			echo '</div>';
 
-			echo '<div class="client-list">';
+			echo '<div class="client-list about-clients">';
 			echo '<div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">';
 			dynamic_sidebar( 'sidebar-aboutus' );
 			echo '</div>';

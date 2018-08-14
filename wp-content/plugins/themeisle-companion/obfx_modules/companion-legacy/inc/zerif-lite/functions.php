@@ -143,13 +143,13 @@ function themeisle_populate_with_default_widgets() {
 		if ( file_exists( get_stylesheet_directory() . '/images/testimonial1.jpg' ) ) {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Dana Lorem',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_stylesheet_directory_uri() . '/images/testimonial1.jpg',
 			);
 		} else {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Dana Lorem',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_template_directory_uri() . '/images/testimonial1.jpg',
 			);
 		}
@@ -165,13 +165,13 @@ function themeisle_populate_with_default_widgets() {
 		if ( file_exists( get_stylesheet_directory() . '/images/testimonial2.jpg' ) ) {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Linda Guthrie',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_stylesheet_directory_uri() . '/images/testimonial2.jpg',
 			);
 		} else {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Linda Guthrie',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_template_directory_uri() . '/images/testimonial2.jpg',
 			);
 		}
@@ -187,13 +187,13 @@ function themeisle_populate_with_default_widgets() {
 		if ( file_exists( get_stylesheet_directory() . '/images/testimonial3.jpg' ) ) {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Cynthia Henry',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_stylesheet_directory_uri() . '/images/testimonial3.jpg',
 			);
 		} else {
 			$testimonial_content[ $zerif_lite_counter ] = array(
 				'title'     => 'Cynthia Henry',
-				'text'      => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.',
+				'text'      => '',
 				'image_uri' => get_template_directory_uri() . '/images/testimonial3.jpg',
 			);
 		}

@@ -385,7 +385,7 @@ function zerif_setup() {
 				),
 				array(
 					'title'       => __( 'No credit footer link', 'zerif-lite' ),
-					'description' => __( 'Remove "" copyright from the footer.', 'zerif-lite' ),
+					'description' => __( 'Remove "Zerif Lite developed by ThemeIsle" copyright from the footer.', 'zerif-lite' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),
@@ -1176,7 +1176,7 @@ if ( ! class_exists( 'zerif_testimonial_widget' ) && zerif_check_if_old_version_
 
 				echo '<div class="quote red-text">';
 
-					echo '<i class="fa fa-quote-left"></i>';
+					/* echo '<i class="fa fa-quote-left"></i>'; */
 
 				echo '</div>';
 

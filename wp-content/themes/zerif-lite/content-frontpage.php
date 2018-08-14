@@ -42,6 +42,29 @@ if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customiz
 
 }
 
+	/* RIBBON WITH BOTTOM BUTTON */
+
+/* 	get_template_part( 'sections/ribbon_with_bottom_button' ); */
+
+	/* ABOUT US */
+
+	$zerif_aboutus_show = get_theme_mod( 'zerif_aboutus_show' );
+
+if ( ( isset( $zerif_aboutus_show ) && $zerif_aboutus_show != 1 ) || is_customize_preview() ) {
+
+	get_template_part( 'sections/about_us' );
+
+}
+
+	/* Company Features */
+
+	$zerif_testimonials_show = get_theme_mod( 'zerif_testimonials_show' );
+
+if ( ( isset( $zerif_testimonials_show ) && $zerif_testimonials_show != 1 ) || is_customize_preview() ) {
+
+	get_template_part( 'sections/company_features' );
+
+}
 	
 
 		/* CONTACT US */
