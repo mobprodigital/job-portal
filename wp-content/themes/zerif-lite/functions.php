@@ -385,7 +385,7 @@ function zerif_setup() {
 				),
 				array(
 					'title'       => __( 'No credit footer link', 'zerif-lite' ),
-					'description' => __( 'Remove "Zerif Lite developed by ThemeIsle" copyright from the footer.', 'zerif-lite' ),
+					'description' => __( 'Rejobe "Zerif Lite developed by ThemeIsle" copyright from the footer.', 'zerif-lite' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),
@@ -500,7 +500,7 @@ function zerif_migrate_logo() {
 		if ( is_int( $zerif_old_logo_id ) ) {
 			set_theme_mod( 'custom_logo', $zerif_old_logo_id );
 		}
-		remove_theme_mod( 'zerif_logo' );
+		rejobe_theme_mod( 'zerif_logo' );
 	}
 }
 
@@ -731,13 +731,13 @@ function zerif_adjust_content_width() {
 add_action( 'template_redirect', 'zerif_adjust_content_width' );
 
 /**
- * Remove Yoast rel="prev/next" link from header
+ * Rejobe Yoast rel="prev/next" link from header
  */
-function zerif_remove_yoast_rel_link() {
+function zerif_rejobe_yoast_rel_link() {
 	return false;
 }
-add_filter( 'wpseo_prev_rel_link', 'zerif_remove_yoast_rel_link' );
-add_filter( 'wpseo_next_rel_link', 'zerif_remove_yoast_rel_link' );
+add_filter( 'wpseo_prev_rel_link', 'zerif_rejobe_yoast_rel_link' );
+add_filter( 'wpseo_next_rel_link', 'zerif_rejobe_yoast_rel_link' );
 
 add_action( 'tgmpa_register', 'zerif_register_required_plugins' );
 
@@ -1799,12 +1799,12 @@ function zerif_customizer_custom_css() {
 }
 add_action( 'customize_controls_print_styles', 'zerif_customizer_custom_css' );
 
-add_filter( 'body_class', 'remove_class_function' );
+add_filter( 'body_class', 'rejobe_class_function' );
 
 /**
- * Remove custom-background from body_class()
+ * Rejobe custom-background from body_class()
  */
-function remove_class_function( $classes ) {
+function rejobe_class_function( $classes ) {
 
 	$zerif_keep_old_fp_template = get_theme_mod( 'zerif_keep_old_fp_template' );
 	/* For new users with static page */
@@ -1812,14 +1812,14 @@ function remove_class_function( $classes ) {
 		if ( ! is_front_page() && ! is_home() ) {
 			// index of custom-background
 			$key = array_search( 'custom-background', $classes );
-			// remove class
+			// rejobe class
 			unset( $classes[ $key ] );
 		}
 	} else {
 		if ( ! is_home() && ! is_page_template( 'template-frontpage.php' ) ) {
 			// index of custom-background
 			$key = array_search( 'custom-background', $classes );
-			// remove class
+			// rejobe class
 			unset( $classes[ $key ] );
 		}
 	}
@@ -1976,7 +1976,7 @@ add_action( 'woocommerce_before_checkout_form', 'zerif_coupon_after_order_table_
 
 /**
  * Checkout page
- * Move the coupon fild and message info after the order table
+ * jobe the coupon fild and message info after the order table
  **/
 function zerif_coupon_after_order_table_js() {
 	wc_enqueue_js(
@@ -1990,7 +1990,7 @@ add_action( 'woocommerce_checkout_order_review', 'zerif_coupon_after_order_table
 
 /**
  * Checkout page
- * Add the id zerif-checkout-coupon to be able to Move the coupon fild and message info after the order table
+ * Add the id zerif-checkout-coupon to be able to jobe the coupon fild and message info after the order table
  **/
 function zerif_coupon_after_order_table() {
 	echo '<div id="zerif-checkout-coupon"></div><div style="clear:both"></div>';
@@ -2064,7 +2064,7 @@ add_filter( 'megamenu_themes', 'megamenu_add_theme_zerif_lite_max_menu' );
 add_action( 'admin_notices', 'zerif_fagri_notice' );
 /**
  * Add a dismissible notice in the dashboard to let users know that we have a new child theme for Hestia, Fagri
- * TODO: Remove this in a future release
+ * TODO: Rejobe this in a future release
  */
 function zerif_fagri_notice() {
 	global $current_user;
@@ -2094,3 +2094,230 @@ function zerif_nag_ignore_fagri() {
 		add_user_meta( $user_id, 'zerif_ignore_fagri_notice', 'true', true );
 	}
 }
+
+// Custom Post Job Start
+
+function job_custom_post() {
+	$labels = array(
+	  'name'               => _x( 'Jobs', 'post type general name' ),
+	  'singular_name'      => _x( 'Job', 'post type singular name' ),
+	  'add_new'            => _x( 'Add New', 'job' ),
+	  'add_new_item'       => __( 'Add New job' ),
+	  'edit_item'          => __( 'Edit job' ),
+	  'new_item'           => __( 'New job' ),
+	  'all_items'          => __( 'All job' ),
+	  'view_item'          => __( 'View job' ),
+	  'search_items'       => __( 'Search job' ),
+	  'not_found'          => __( 'No job found' ),
+	  'not_found_in_trash' => __( 'No job found in the Trash' ), 
+	  'parent_item_colon'  => '',
+	  'menu_name'          => 'job'
+	);
+	$args = array(
+	  'labels'        => $labels,
+	  'description'   => 'Holds our products and product specific data',
+	  'public'        => true,
+	  'menu_position' => 5,
+	  'supports'      => array( 'title', 'editor', 'thumbnail', 'comments' ),
+	  'has_archive'   => true,
+	);
+	register_post_type( 'job', $args ); 
+  }
+  add_action( 'init', 'job_custom_post' );
+
+// job category texonomy start
+
+function taxonomies_job() {
+	$labels = array(
+	  'name'              => _x( 'job Categories', 'taxonomy general name' ),
+	  'singular_name'     => _x( 'job Category', 'taxonomy singular name' ),
+	  'search_items'      => __( 'Search job Categories' ),
+	  'all_items'         => __( 'All job Categories' ),
+	  'parent_item'       => __( 'Parent job Category' ),
+	  'parent_item_colon' => __( 'Parent job Category:' ),
+	  'edit_item'         => __( 'Edit job Category' ), 
+	  'update_item'       => __( 'Update job Category' ),
+	  'add_new_item'      => __( 'Add New job Category' ),
+	  'new_item_name'     => __( 'New job Category' ),
+	  'menu_name'         => __( 'job Categories' ),
+	);
+	$args = array(
+	  'labels' => $labels,
+	  'hierarchical' => true,
+	);
+	register_taxonomy( 'job_category', array('job'), $args );
+  }
+  add_action( 'init', 'taxonomies_job', 0 );
+
+// job category texonomy end
+
+// job metabox start
+add_action( 'add_meta_boxes', 'product_price_box' );
+function product_price_box() {
+
+    add_meta_box( 
+        'job_info_metabox',
+        __( 'job Info'),
+        'job_info_metabox_fun',
+        'job',
+        'normal',
+        'high'
+    );
+}
+
+function job_info_metabox_fun( $post ) {
+	$job_post_id = get_the_ID();
+	wp_nonce_field( plugin_basename( __FILE__ ), 'job_info_metabox_fun_nonce' );
+	$job_html = '<table style="width:100%">' 
+			 		.'<tr>' 
+			 			.'<td>' 
+			 				.'<label style="width:100%"  for="job_role">Job role</label>'
+			 				.'<input style="width:100%" type="text" id="job_role"  value="'. get_post_meta( $job_post_id, 'job_role', true ) .'" name="job_role" placeholder="Manager, Developer, HR, Finance" />'
+						 .'</td>' 
+						 .'<td>' 
+			 				.'<label style="width:100%" for="job_experience">Job Experience</label>'
+			 				.'<input style="width:100%" type="text" id="job_experience"  value="'. get_post_meta( $job_post_id, 'job_experience', true ) .'" name="job_experience" placeholder="Fresher, 2 Yr, 3.5yr"/>'
+			 			.'</td>'
+					.'<tr>' 
+						 .'<td>' 
+			 				 .'<label style="width:100%" for="job_type">Select Job Type </label>'
+							 .'<select style="width:100%" name="job_type" class="form-control" id="job_type">'
+							 	.'<option>Permanent</option>'
+								.'<option>Contract</option>'
+							.'</select>' 
+						.'</td>' 
+						.'<td>' 
+			 				.'<label style="width:100%" for="client_name"> Client Name </label>'
+			 				.'<input style="width:100%" type="text" id="client_name"  value="'. get_post_meta( $job_post_id, 'client_name', true ) .'" name="client_name" placeholder="e.g Jack Morris, MobPro" />'
+						 .'</td>'
+						 .'</tr>'
+						.'<tr>'
+						  .'<td>' 
+							.'<label style="width:100%" for="job_location"> Location </label>'
+							.'<input style="width:100%" type="text" id="job_location"  value="'. get_post_meta( $job_post_id, 'job_location', true ) .'" name="job_location" placeholder="e.g Delhi NCR, Bangalore, Pune" />'
+						  .'</td>'
+						  .'<td>' 
+							.'<label style="width:100%" for="job_exp-date"> Expiry Date </label>'
+							.'<input style="width:100%" type="text" id="job_exp-date"  value="'. get_post_meta( $job_post_id, 'job_exp-date', true ) .'" name="job_exp-date" placeholder="dd/mm/yyyy" />'
+						  .'</td>' 
+					 .'</tr>'
+				.'</table>'; 
+
+	
+	echo $job_html;
+  }
+
+  add_action( 'save_post', 'job_info_save_fun' );
+function job_info_save_fun( $post_id ) {
+
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+  return;
+
+  if ( !wp_verify_nonce( $_POST['job_info_metabox_fun_nonce'], plugin_basename( __FILE__ ) ) )
+  return;
+
+  if ( 'page' == $_POST['post_type'] ) {
+    if ( !current_user_can( 'edit_page', $post_id ) )
+    return;
+  } else {
+    if ( !current_user_can( 'edit_post', $post_id ) )
+    return;
+  }
+
+  $job_release_year = $_POST['job_release_year'];
+  update_post_meta( $post_id, 'job_release_year', $job_release_year );
+  
+  $job_duration = $_POST['job_duration'];
+  update_post_meta( $post_id, 'job_duration', $job_duration );
+  
+  $job_cast = $_POST['job_cast'];
+  update_post_meta( $post_id, 'job_cast', $job_cast );
+ 
+  $job_country = $_POST['job_country'];
+  update_post_meta( $post_id, 'job_country', $job_country );
+
+  $job_embedded_code = $_POST['job_embedded_code'];
+  update_post_meta( $post_id, 'job_embedded_code', $job_embedded_code );
+} // job metabox end
+
+//custom job widgets start //
+
+// Register and load the widget
+function job_load_widget() {
+    register_widget( 'job_widget' );
+	}
+	add_action( 'widgets_init', 'job_load_widget' );
+	
+	// Creating the widget 
+	class job_widget extends WP_Widget {
+	
+	function __construct() {
+	parent::__construct(
+	
+	// Base ID of your widget
+	'job_widget', 
+	
+	// Widget name will appear in UI
+	__('job Widget', 'job_widget_domain'), 
+	
+	// Widget description
+	array( 'description' => __( 'job Widgets', 'job_widget_domain' ), ) 
+	);
+	}
+	
+	// Creating widget front-end
+	
+	public function widget( $args, $instance ) {
+	$title = apply_filters( 'widget_title', $instance['title'] );
+	
+	// before and after widget arguments are defined by themes
+	echo $args['before_widget'];
+	if ( ! empty( $title ) )
+	echo $args['before_title'] . $title . $args['after_title'];
+	
+	// This is where you run the code and display the output
+	echo __( 'Hello, World!', 'job_widget_domain' );
+	echo $args['after_widget'];
+	}
+			
+	// Widget Backend 
+	public function form( $instance ) {
+	if ( isset( $instance[ 'title' ] ) ) {
+	$title = $instance[ 'title' ];
+	}
+	else {
+	$title = __( 'New title', 'job_widget_domain' );
+	}
+	// Widget admin form
+	?>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+	</p>
+	<?php 
+	}
+		
+	// Updating widget replacing old instances with new
+	public function update( $new_instance, $old_instance ) {
+	$instance = array();
+	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+	return $instance;
+	}
+} // Class job_widget ends here
+//custom job widgets end 
+
+//custom job widgets area start
+function job_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'job Sidebar', 'job' ),
+        'id' => 'job-sidebar',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>',
+    ) );
+}
+add_action( 'widgets_init', 'job_widgets_init' );
+//custom job widgets area end
+
+// custom post job End
