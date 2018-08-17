@@ -2266,7 +2266,9 @@ small {
     border: 1px solid #efe8e8;
     background-color: #f1f1f1;
 }
-
+.upload-resume{
+	margin-top: 10px;
+}
 .featured-jobs>img{
 	width: 100%;	
 }
@@ -2297,6 +2299,24 @@ span#zerif_testim-widget-1, span#zerif_testim-widget-2, span#zerif_testim-widget
     padding-bottom: 66px !important;
     background: #fff;
 }	
+.job-search-heading {
+    padding: 10px 0 10px 11px;
+    color: #565656;
+    background-color: #ecf0f1;
+}
+.job-content{
+	line-height: 24px;
+    padding-top: 17px;
+    text-align: justify;
+}
+.job-frame {
+	color: white;
+    background-color: #e96656;
+    text-align: justify;
+    width: max-content;
+    padding: 0 8px;
+    font-weight: bold;
+}
 /* Custom CSS END FOR FRONT PAGE */
 
 

@@ -2120,6 +2120,7 @@ function job_custom_post() {
 	  'menu_position' => 5,
 	  'supports'      => array( 'title', 'editor', 'thumbnail', 'comments' ),
 	  'has_archive'   => true,
+	  'taxonomies' => array('post_tag')
 	);
 	register_post_type( 'job', $args ); 
   }
@@ -2177,13 +2178,20 @@ function job_info_metabox_fun( $post ) {
 						 .'<td>' 
 			 				.'<label style="width:100%" for="job_experience">Job Experience</label>'
 			 				.'<input style="width:100%" type="text" id="job_experience"  value="'. get_post_meta( $job_post_id, 'job_experience', true ) .'" name="job_experience" placeholder="Fresher, 2 Yr, 3.5yr"/>'
+						 .'</td>'
+					 .'<tr>'
+					 .'<tr>' 
+						 .'<td colspan="2">' 
+			 				.'<label style="width:100%" for="job_skill">Job Skill (comma sparated)</label>'
+			 				.'<input style="width:100%" type="text" id="job_skill"  value="'. get_post_meta( $job_post_id, 'job_skill', true ) .'" name="job_skill" placeholder="HTML, Android, .net"/>'
 			 			.'</td>'
+					.'<tr>'
 					.'<tr>' 
 						 .'<td>' 
 			 				 .'<label style="width:100%" for="job_type">Select Job Type </label>'
 							 .'<select style="width:100%" name="job_type" class="form-control" id="job_type">'
-							 	.'<option>Permanent</option>'
-								.'<option>Contract</option>'
+							 	.'<option '.(get_post_meta( $job_post_id, 'job_type', true ) == 'permanant' ? 'selected' : '' ).'  value="permanant">Permanent</option>'
+								.'<option '.(get_post_meta( $job_post_id, 'job_type', true ) == 'contract' ? 'selected' : '' ).'  value="contract">Contract</option>'
 							.'</select>' 
 						.'</td>' 
 						.'<td>' 
@@ -2191,16 +2199,17 @@ function job_info_metabox_fun( $post ) {
 			 				.'<input style="width:100%" type="text" id="client_name"  value="'. get_post_meta( $job_post_id, 'client_name', true ) .'" name="client_name" placeholder="e.g Jack Morris, MobPro" />'
 						 .'</td>'
 						 .'</tr>'
-						.'<tr>'
-						  .'<td>' 
-							.'<label style="width:100%" for="job_location"> Location </label>'
-							.'<input style="width:100%" type="text" id="job_location"  value="'. get_post_meta( $job_post_id, 'job_location', true ) .'" name="job_location" placeholder="e.g Delhi NCR, Bangalore, Pune" />'
-						  .'</td>'
-						  .'<td>' 
-							.'<label style="width:100%" for="job_exp-date"> Expiry Date </label>'
-							.'<input style="width:100%" type="text" id="job_exp-date"  value="'. get_post_meta( $job_post_id, 'job_exp-date', true ) .'" name="job_exp-date" placeholder="dd/mm/yyyy" />'
-						  .'</td>' 
+					.'<tr>'
+						.'<td>' 
+						.'<label style="width:100%" for="job_location"> Location </label>'
+						.'<input style="width:100%" type="text" id="job_location"  value="'. get_post_meta( $job_post_id, 'job_location', true ) .'" name="job_location" placeholder="e.g Delhi NCR, Bangalore, Pune" />'
+						.'</td>'
+						.'<td>' 
+						.'<label style="width:100%" for="job_exp_date"> Expiry Date </label>'
+						.'<input style="width:100%" type="text" id="job_exp_date"  value="'. get_post_meta( $job_post_id, 'job_exp_date', true ) .'" name="job_exp_date" placeholder="dd/mm/yyyy" />'
+						.'</td>' 
 					 .'</tr>'
+					  
 				.'</table>'; 
 
 	
@@ -2224,20 +2233,26 @@ function job_info_save_fun( $post_id ) {
     return;
   }
 
-  $job_release_year = $_POST['job_release_year'];
-  update_post_meta( $post_id, 'job_release_year', $job_release_year );
-  
-  $job_duration = $_POST['job_duration'];
-  update_post_meta( $post_id, 'job_duration', $job_duration );
-  
-  $job_cast = $_POST['job_cast'];
-  update_post_meta( $post_id, 'job_cast', $job_cast );
- 
-  $job_country = $_POST['job_country'];
-  update_post_meta( $post_id, 'job_country', $job_country );
+  $job_role = $_POST['job_role'];
+  update_post_meta( $post_id, 'job_role', $job_role );
 
-  $job_embedded_code = $_POST['job_embedded_code'];
-  update_post_meta( $post_id, 'job_embedded_code', $job_embedded_code );
+  $job_experience = $_POST['job_experience'];
+  update_post_meta( $post_id, 'job_experience', $job_experience );
+  
+  $job_type = $_POST['job_type'];
+  update_post_meta( $post_id, 'job_type', $job_type );
+
+  $job_skill = $_POST['job_skill'];
+  update_post_meta( $post_id, 'job_skill', $job_skill );
+  
+  $client_name = $_POST['client_name'];
+  update_post_meta( $post_id, 'client_name', $client_name );
+ 
+  $job_location = $_POST['job_location'];
+  update_post_meta( $post_id, 'job_location', $job_location );
+
+  $job_exp_date = $_POST['job_exp_date'];
+  update_post_meta( $post_id, 'job_exp_date', $job_exp_date );
 } // job metabox end
 
 //custom job widgets start //

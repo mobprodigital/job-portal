@@ -110,6 +110,18 @@ echo '<section class="our-team job-listing-team ' . ( ( is_customize_preview() &
                                         '</div>'.    
                                     '</div>'.
                                 '</div> <!--featured jobs box-->'.
+                                    '<div class="featured-jobs-box upload-resume">'.
+                                        '<div class="featured-jobs">'.
+                                            '<div class= "featured-jobs-metadata">'.
+                                                '<h4> Web Analyst</h4>'.
+                                                '<p> Campaign strategy, Reporting and Analysis Client focus, Analytical and technical </p>'.
+                                                    '<button class="btn btn-default btn-job-search button" type="submit" name="resume_submit" value="true">Upload Resume</button>'.
+                                            '</div>'.
+                                        '<div>'.
+                                    '</div>'.    
+                                '</div>'.
+                            '</div> <!--featured jobs box-->'.
+
                                /* ' <div id="featured-job-item" class="carousel slide" data-ride="carousel">'.
                                '<ul class="carousel-indicators">'.
                                     '<li data-target="#featured-job-item" data-slide-to="0" class="active"></li>'.
