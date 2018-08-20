@@ -14,32 +14,22 @@ echo '<section class="job-search ' . ( ( is_customize_preview() && ( ! isset( $z
     $html =  '<div class="container">'.
                 '<div class="job-search-wrapper">'.
                     '<h2 class= "job-search-title"> Find a Job  </h2>'.
-                    '<form class= "pirate_forms">'.              
-                        '<div class= "row">'.
+                    '<form class= "pirate_forms" method="get" action="'.home_url( "/" ).'">'    
+                        .'<input type="hidden" value="job" name="post_type">'         
+                        .'<div class= "row">'.
                             '<div class="col-md-7 form-col">'.
                                 '<div class="form-group has-feedback">'.
-                                    '<label class="text-label text-label-form" for="keyword">Search</label>'.
-                                    '<input class="form-control input" type="text" name="keyword" id="keyword" placeholder="Keywords (IT Engineer, Shop Manager, Hr Manager...)" required="required">'.
+                                    '<label class="text-label text-label-form" for="s">Search for</label>'.
+                                    '<input class="form-control input" type="text" name="s" id="s" placeholder="Keywords (IT Engineer, Shop Manager, Hr Manager...)" required="required">'.
                                     '<span class="fa fa-search form-control-feedback"></span>'.
                                 '</div>'./* form-group has-feedback */
                             '</div>'.    /* col-md-7 */
 
-                            '<div class="col-md-5 form-col">'.
-                                '<div class="form-group has-feedback">'.
-                                    '<label class="text-label text-label-form" for="keyword">Search</label>'.
-                                    '<input class="form-control" type="text" name="location" id="location" placeholder="New York, Hong Kong, New Delhi, Berlin etc.">'.
-                                    '<span class="fa fa-map-marker form-control-feedback"></span>'.
-                                '</div>'./* form-group has-feedback */
+                            '<div class="col-md-5 form-col">'
+                                .'<div style="margin-bottom: 4px;">&nbsp;</div>'
+                                .'<button class="btn btn-default btn-job-search button btn-block" type="submit" name="submit" value="search"> <i class="fa fa-search"></i> Search</button>'.
                             '</div>'.    /* col-md-5 */                   
                         '</div>'. /* Row End */
-                       
-                        '<div class= "row">'.
-                            '<div class="col-md-10 form-col">'.
-                            '</div>'.    /* col-md-10 */  
-                            '<div class="col-md-2 search-btn-group form-col">'.
-                                '<button class="btn btn-default btn-job-search button" type="submit" name="submit" value="true">Search</button>'.
-                            '</div>'. /* col md 2 End */
-                        '</div>'. /* row */
                     '</form>';
                 '</div>'; /* Job search Wrapper */            
 

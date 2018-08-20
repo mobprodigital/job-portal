@@ -32,15 +32,16 @@ get_header(); ?>
 								</h1>
 
 						</header><!-- .page-header -->
-
+						<div class="panel-group" id="job-accordian">
 						<?php
 						while ( have_posts() ) {
 							the_post();
 
-							get_template_part( 'content', get_post_format() );
+							// get_template_part( 'content', get_post_format() );
+							get_template_part( 'sections/job_listing' );
 
 						}
-
+						echo '</div><!--job-accordian-->';
 						echo get_the_posts_navigation(
 							array(
 								/* translators: Newer posts navigation arrow */

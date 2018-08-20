@@ -34,13 +34,57 @@ if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customiz
 
 	/* OUR TEAM */
 
-	$zerif_ourteam_show = get_theme_mod( 'zerif_ourteam_show' );
+	/* $zerif_ourteam_show = get_theme_mod( 'zerif_ourteam_show' );
 
 if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customize_preview() ) {
 
-	get_template_part( 'sections/job_results' );
+	get_template_part( 'sections/our_team' );
 
-}
+} */
+?>
+
+<section class="job-listing">
+<div class="container">
+	<div class="mb-40">
+			<header class="jobs-listing-title">
+				<h1 class=""> <i class="fa fa-briefcase"></i> Recent jobs</h1>
+			</header>
+	</div><!--section-header-->
+		   
+	<?php
+ 
+			$args = array(
+				'post_type'=> 'job',
+				'posts_per_page' => '10'
+				);              
+			
+			$the_query = new WP_Query( $args );
+
+			echo ' <div class="panel-group" id="job-accordian">';
+
+			if($the_query->have_posts()) { 
+
+
+				while ( $the_query->have_posts() ) { 
+					$the_query->the_post(); 
+
+					get_template_part('sections/job_listing');
+
+				}
+                    
+			}
+			else{
+				$jobListingHtml.= 'no job found';    
+			}
+
+			echo'</div><!--panel-group-->';
+			
+		?>
+
+</div><!--container-->
+</section><!--job-listing-->
+
+<?php
 
 	/* RIBBON WITH BOTTOM BUTTON */
 

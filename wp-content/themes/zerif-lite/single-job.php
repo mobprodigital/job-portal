@@ -36,16 +36,22 @@ get_header(); ?>
 						$job_exp_date = get_post_meta( $current_post_id, 'job_exp_date', true );
 						$job_skill = get_post_meta( $current_post_id, 'job_skill', true );
 
-                        $job_single_html.= '<section class="col-sm">'
+						$job_single_html.= '<section>'
+												.'<div class="text-right mb-20">
+													<a href="mailto:girish.c@morrisdigital.mobi?Subject=Job%Application" class="btn btn-lg btn-success job-apply-btn">Apply Now</a>
+												</div>'
 												.'<div class = "single-job_show">'
-													.'<div class="news-section-info clearfix"><h3 class= "job-search-heading">'.get_the_title().'</h3></div>'
+													.'<div class="news-section-info clearfix"><h3 class= "job-search-heading">'.get_the_title()
+														.'<div class="job-frame pull-right"><span> Last Date: </span>'.$job_exp_date.'</div>'
+													.'</h3></div>'
 													/*.get_the_post_thumbnail($current_post_id) */
-												.'<div class= "job-frame"><span> Last Date: </span>'.$job_exp_date.'</div>'
+												
 												.'</div>'
 												.'</br>'
-
-												.'<div>'
-													.'<div class="job-info-list">'
+												.'<article class="row">'
+													.'<div class="col-md-4 job-sclient-img">'.(has_post_thumbnail() ? get_the_post_thumbnail($current_post_id) : '<img src="/wp-content/uploads/2018/08/client_default_img.png" alt="client image"/>').'</div>'
+													.'<div class="col-md-8">'
+														.'<div class="job-info-list">'
 															.'<table class="table table-bordered table-inline">'
 																.'<tr><th>Job Role</th><td> '.$job_role.'</td></tr>'
 																.'<tr><th>Job Type</th><td> '.$job_type.'</td></tr>'
@@ -54,24 +60,26 @@ get_header(); ?>
 																.'<tr><th>Client Name</th><td> '.$client_name.'</td></tr>'
 																.'<tr><th>Job Location</th><td> '.$job_location.'</td></tr>'
 																.'<tr><th> Job Profile </th><td>'.implode(',', $single_job_cat_arr).'</td></tr>'
-																.'</table><!--job-info-list-->'
-																.'<h4 class= "job-search-heading"> Job Description </h4>'
-															.'<div class="job-content">' .get_the_content() .'</div><!--job-content-->'
-													.'</div>'
-												
+															.'</table>'
+														.'</div><!--job-info-list-->'
+													.'</div><!--col-md-8-->'
+												.'</article>'
+												.'<h4 class= "job-search-heading"> Job Description </h4>'
+												.'<div class="job-content mb-40">' .get_the_content() .'</div><!--job-content-->'
+												.'<div class="text-right mb-40">
+													<a href="mailto:girish.c@morrisdigital.mobi?Subject=Job%Application" class="btn btn-lg btn-success job-apply-btn">Apply Now</a>
+												</div>'
 											.'</section><!--col-sm-->';
 											echo $job_single_html; 
+											
 						the_post_navigation(
 							array(
 								'next_text' => _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'zerif-lite' ),
 								'prev_text' => _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'zerif-lite' ),
 							)
 						);
-
-						// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template( '' );
-						endif;
+						echo '<br/><br/>';
+					
 					endwhile; // end of the loop.
 					?>
 				</main><!-- #main -->
