@@ -22,16 +22,6 @@ if ( ( isset( $zerif_bigtitle_show ) && $zerif_bigtitle_show != 1 ) || is_custom
 
 <?php
 
-	/* Find a Job Section */
-
-	$zerif_ourteam_show = get_theme_mod( 'zerif_ourteam_show' );
-
-if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customize_preview() ) {
-
-	get_template_part( 'sections/find_job' );
-
-}
-
 	/* OUR TEAM */
 
 	/* $zerif_ourteam_show = get_theme_mod( 'zerif_ourteam_show' );
@@ -43,16 +33,16 @@ if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customiz
 } */
 ?>
 
-<section class="job-listing">
+<!-- <section class="job-listing">
 <div class="container">
 	<div class="mb-40">
 			<header class="jobs-listing-title">
 				<h1 class=""> <i class="fa fa-briefcase"></i> Recent jobs</h1>
 			</header>
-	</div><!--section-header-->
+	</div> --><!--section-header-->
 		   
 	<?php
- 
+ /* 
 			$args = array(
 				'post_type'=> 'job',
 				'posts_per_page' => '10'
@@ -78,11 +68,11 @@ if ( ( isset( $zerif_ourteam_show ) && $zerif_ourteam_show != 1 ) || is_customiz
 			}
 
 			echo'</div><!--panel-group-->';
-			
+	 */		
 		?>
 
-</div><!--container-->
-</section><!--job-listing-->
+<!-- </div> --><!--container-->
+<!-- </section> --><!-- job-listing -->
 
 <?php
 
@@ -100,15 +90,13 @@ if ( ( isset( $zerif_aboutus_show ) && $zerif_aboutus_show != 1 ) || is_customiz
 
 }
 
-	/* Company Features */
+/* Company Features */
+	get_template_part( 'sections/our_client' );
 
-	$zerif_testimonials_show = get_theme_mod( 'zerif_testimonials_show' );
-
-if ( ( isset( $zerif_testimonials_show ) && $zerif_testimonials_show != 1 ) || is_customize_preview() ) {
-
+/* Company Features */
 	get_template_part( 'sections/company_features' );
 
-}
+
 	
 
 		/* CONTACT US */

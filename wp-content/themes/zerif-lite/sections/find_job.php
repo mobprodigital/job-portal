@@ -11,13 +11,13 @@ $zerif_ourteam_show = get_theme_mod( 'zerif_ourteam_show' );
 
 echo '<section class="job-search ' . ( ( is_customize_preview() && ( ! isset( $zerif_ourteam_show ) || $zerif_ourteam_show == 1 ) ) ? ' zerif_hidden_if_not_customizer ' : '' ) . '" id="team">';
 	zerif_top_our_team_trigger();
-    $html =  '<div class="container">'.
+    $html =  '<div class="">'.
                 '<div class="job-search-wrapper">'.
                     '<h2 class= "job-search-title"> Find a Job  </h2>'.
                     '<form class= "pirate_forms" method="get" action="'.home_url( "/" ).'">'    
                         .'<input type="hidden" value="job" name="post_type">'         
                         .'<div class= "row">'.
-                            '<div class="col-md-7 form-col">'.
+                            '<div class="col-md-8 ">'.
                                 '<div class="form-group has-feedback">'.
                                     '<label class="text-label text-label-form" for="s">Search for</label>'.
                                     '<input class="form-control input" type="text" name="s" id="s" placeholder="Keywords (IT Engineer, Shop Manager, Hr Manager...)" required="required">'.
@@ -25,8 +25,8 @@ echo '<section class="job-search ' . ( ( is_customize_preview() && ( ! isset( $z
                                 '</div>'./* form-group has-feedback */
                             '</div>'.    /* col-md-7 */
 
-                            '<div class="col-md-5 form-col">'
-                                .'<div style="margin-bottom: 4px;">&nbsp;</div>'
+                            '<div class="col-md-4 ">'
+                                .'<div style="margin-bottom: 5px;">&nbsp;</div>'
                                 .'<button class="btn btn-default btn-job-search button btn-block" type="submit" name="submit" value="search"> <i class="fa fa-search"></i> Search</button>'.
                             '</div>'.    /* col-md-5 */                   
                         '</div>'. /* Row End */

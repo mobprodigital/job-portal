@@ -2186,12 +2186,13 @@ ul.nav > li.current_page_item.current > a:before {
 /* Custom CSS START FOR FRONT PAGE */
 
 .job-search {
-    padding: 60px 0 80px;
+	padding: 30px 0 30px;
     color: #565656;
     background-color: #ecf0f1;
     font-family: "Nunito", sans-serif;
-	line-height: 1.42857143;
-	text-align: left;
+    line-height: 1.42857143;
+    text-align: left;
+    margin-bottom: 40px;
 }
 .job-search-wrapper{
 	box-sizing: border-box;
@@ -2211,6 +2212,9 @@ ul.nav > li.current_page_item.current > a:before {
     color: #fff;
     border: none;
 }
+.job-search-title {
+    padding-left: 16px;
+}
 .btn-job-search:hover
 {
 	color: #fff;
@@ -2221,6 +2225,16 @@ ul.nav > li.current_page_item.current > a:before {
 	font-size: 18px;
     font-weight: 400;
     display: block;
+}
+a.pull-right.btn.btn-primary.btn-xs:hover {
+    color: white;
+    background: black;
+	border: 1px solid black;
+}
+a.btn.btn-danger.btn-xs.pull-right:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
 }
 .form-col {
     margin-left: 0px;
@@ -2328,6 +2342,17 @@ span#zerif_testim-widget-1, span#zerif_testim-widget-2, span#zerif_testim-widget
 }
 p.job-position {
     margin: 0 0 0px;
+}
+
+.companies-listing {
+    padding: 59px 0 71px;
+    text-align: center;
+    color: #505050;
+    background: #e4e1d5;
+}
+
+form.wpcf7-form {
+	width: 100%;
 }
 /* Custom CSS END FOR FRONT PAGE */
 
@@ -3926,12 +3951,12 @@ article .posted-on a:hover {
 .entry-content {
 	margin: 1em 0 0;
 }
-.row {
+/* .row {
 	float: left;
 	width: 100%;
 	margin-right: 0;
 	margin-left: 0;
-}
+} */
 
 /* Calendar style */
 /* Calendar Widget */

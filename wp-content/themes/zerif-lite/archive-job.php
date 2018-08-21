@@ -21,15 +21,23 @@ get_header(); ?>
 		<?php zerif_top_archive_content_trigger(); ?>
 
 		<div id="primary" class="content-area">
-
+			
 			<main id="main" class="site-main">
+
+				<section>
+					
+					<?php
+						get_template_part( 'sections/find_job' );
+					?>
+				</section>
+
 
 			<?php if ( have_posts() ) : ?>
 
-				<header class="entry-header mb-40">
-					<h1 class="entry-title">Job Listing</h1>
-			
-				</header><!-- .page-header -->
+				<header class="entry-header jobs-listing-title">
+					<h1 class="entry-title"> <i class="fa fa-briefcase"></i> All Jobs</h1>
+				</header>
+				<div class="entry-content">
 				<div class="panel-group" id="job-accordian">
 				<?php
 
@@ -46,7 +54,7 @@ get_header(); ?>
 						get_template_part( 'sections/job_listing' );
 
 					endwhile;
-					echo '</div><!--panelgroup-->';
+					echo '</div><!--panelgroup-->	</div><!--entry-content-->';
 
 					echo get_the_posts_navigation(
 						array(
@@ -65,7 +73,7 @@ get_header(); ?>
 				?>
 
 			</main><!-- #main -->
-
+		
 		</div><!-- #primary -->
 
 		<?php zerif_bottom_archive_content_trigger(); ?>

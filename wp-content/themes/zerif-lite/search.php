@@ -30,7 +30,9 @@ get_header(); ?>
 								printf( __( 'Search Results for: %s', 'zerif-lite' ), '<span>' . get_search_query() . '</span>' );
 								?>
 								</h1>
-
+							<div> 
+							Morris Recruiters are here shape your career, so, if you are looking for perfect job to meet up with your caliber then be the part of our searchable centralized database by sending us your details.
+							</div>
 						</header><!-- .page-header -->
 						<div class="panel-group" id="job-accordian">
 						<?php

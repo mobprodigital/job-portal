@@ -28,7 +28,7 @@ get_header(); ?>
 
 				<header class="entry-header mb-40">
 					<h1 class="entry-title">Job Listing</h1>
-			
+                    
 				</header><!-- .page-header -->
 				<div class="panel-group" id="job-accordian">
 				<?php

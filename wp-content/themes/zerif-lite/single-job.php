@@ -41,9 +41,9 @@ get_header(); ?>
 													<a href="mailto:girish.c@morrisdigital.mobi?Subject=Job%Application" class="btn btn-lg btn-success job-apply-btn">Apply Now</a>
 												</div>'
 												.'<div class = "single-job_show">'
-													.'<div class="news-section-info clearfix"><h3 class= "job-search-heading">'.get_the_title()
+													.'<div class="news-section-info clearfix"><h4 class= "job-search-heading">'.get_the_title()
 														.'<div class="job-frame pull-right"><span> Last Date: </span>'.$job_exp_date.'</div>'
-													.'</h3></div>'
+													.'</h4></div>'
 													/*.get_the_post_thumbnail($current_post_id) */
 												
 												.'</div>'
