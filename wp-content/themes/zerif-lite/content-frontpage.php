@@ -9,10 +9,9 @@ $zerif_bigtitle_show = get_theme_mod( 'zerif_bigtitle_show' );
 
 if ( ( isset( $zerif_bigtitle_show ) && $zerif_bigtitle_show != 1 ) || is_customize_preview() ) {
 
-	echo do_shortcode('[metaslider id="61"]');
+	get_template_part( 'sections/big_title' );
 
 }
-
 ?>
 
 </header> <!-- / END HOME SECTION  -->

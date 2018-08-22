@@ -1636,7 +1636,7 @@ object {
 .header-content-wrap {
 	position: relative;
 	padding: 285px 0 210px;
-	background: rgba(0, 0, 0, 0.5);
+	background: #62bb47d4;
 	-webkit-box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 	box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 }
@@ -2354,6 +2354,40 @@ p.job-position {
 form.wpcf7-form {
 	width: 100%;
 }
+
+.form-group {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 12px;
+}
+.btn-job-search {
+    margin-left: 9px;
+    margin-right: 8px;
+}
+.heading-text, .heading-text a {
+    float: none;
+    z-index: 0;
+    color: #fff;
+    font-size: 38px;
+    line-height: 65px;
+    text-align: center;
+    
+}
+.contect-us-form-wrap {
+	font-size: inherit;
+    padding: 11px;
+    margin-top: 5px;
+}
+.contect-us-form-background{
+	background: #ecf0f1;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.form-wrap-backarea{
+	padding-bottom: 5px;
+
+}
+
 /* Custom CSS END FOR FRONT PAGE */
 
 
@@ -3360,7 +3394,7 @@ section#contact .pirate_forms .contact_checkbox_wrap p {
 
 .testimonial {
 	padding-bottom: 90px;
-	background: #8c7620;
+	background: #272727;
 }
 .testimonial .section-header .section-legend {
 	color: #fff;
@@ -3576,7 +3610,7 @@ border-radius: 0 !important;
 
 .contact-us {
 	padding-bottom: 95px;
-	background: rgba(0, 0, 0, 0.5);
+	background: #62bb47d4;
 }
 .contact-us .section-header .section-legend {
 	color: #fff;

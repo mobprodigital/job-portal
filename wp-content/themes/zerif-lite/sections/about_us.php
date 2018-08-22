@@ -307,32 +307,7 @@ if ( ! empty( $zerif_aboutus_feature4_nr ) || ! empty( $zerif_aboutus_feature4_t
 	</div> <!-- / END 3 COLUMNS OF ABOUT US-->
 
 	<!-- CLIENTS -->
-	<?php
-	if ( is_active_sidebar( 'sidebar-aboutus' ) ) :
-
-		$zerif_aboutus_clients_title_text = get_theme_mod( 'zerif_aboutus_clients_title_text' );
-
-		echo '<div class="our-clients about-clients">';
-
-		if ( ! empty( $zerif_aboutus_clients_title_text ) ) {
-
-			echo '<h5><span class="section-footer-title">' . wp_kses_post( $zerif_aboutus_clients_title_text ) . '</span></h5>';
-
-		} elseif ( is_customize_preview() ) {
-
-			echo '<h5><span class="section-footer-title"></span></h5>';
-
-		}
-
-			echo '</div>';
-
-			echo '<div class="client-list about-clients">';
-			echo '<div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">';
-			dynamic_sidebar( 'sidebar-aboutus' );
-			echo '</div>';
-			echo '</div> ';
-			endif;
-	?>
+	
 
 	</div> <!-- / END CONTAINER -->
 

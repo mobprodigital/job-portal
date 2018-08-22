@@ -15,7 +15,7 @@
 
 		if ( ! empty( $zerif_aboutus_clients_title_text ) ) {
 
-            echo '<div class="section-header "><h2> Features </h2>
+            echo '<div class="section-header "><h2> Companies who have posted jobs </h2>
                   
                   </div>';
              
