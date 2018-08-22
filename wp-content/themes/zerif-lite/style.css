@@ -701,7 +701,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	margin: 10px;
+	margin: 0;
 	padding: 13px 35px 13px 35px;
 	border: none;
 	border-radius: 4px;
@@ -1636,7 +1636,7 @@ object {
 .header-content-wrap {
 	position: relative;
 	padding: 285px 0 210px;
-	background: #62bb47d4;
+	background: #044d5fb5;
 	-webkit-box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 	box-shadow: 0 5px 11px 0 rgba(50, 50, 50, 0.08);
 }
@@ -2226,15 +2226,23 @@ ul.nav > li.current_page_item.current > a:before {
     font-weight: 400;
     display: block;
 }
-a.pull-right.btn.btn-primary.btn-xs:hover {
+a.pull-right.btn.btn-primary {
     color: white;
-    background: black;
+}
+
+a.pull-right.btn.btn-primary.btn-xs:hover {
+    color: black;
+    background: white;
 	border: 1px solid black;
 }
 a.btn.btn-danger.btn-xs.pull-right:hover {
     background-color: black;
     color: white;
     border: 1px solid black;
+}
+.job-btn-wrap a {
+    border-color: white;
+    color: white;
 }
 .form-col {
     margin-left: 0px;
@@ -2387,6 +2395,76 @@ form.wpcf7-form {
 	padding-bottom: 5px;
 
 }
+
+
+.section-title {
+    font-weight: 600;
+    border-left: solid 2px gray;
+    padding-left: 6px;
+    color: #00748f;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
+.form-label {
+    color: gray;
+    display: block;
+    width: 100%;
+    text-shadow: 1px 1px 1px #eaeaea;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.form-label span {
+    color: #ca4848;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.con-sec i.fa {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 120px;
+    color: #00748f;
+    margin: 0 0 10px 0;
+}
+.con-sec a {
+    text-align: center;
+    display: block;
+}
+.con-sec span {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cf-group {
+    margin-bottom: 20px;
+}
+.cf-group input:not([type="submit"]),
+.cf-group textarea {
+    width: 100%;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 0;
+}
+
+.cf-group textarea {
+    max-height: 90px;
+	overflow: auto;
+}
+
+.job-btn-wrap{
+	float: right;
+}
+
+.job-btn-wrap btn{
+	color: fff !important;
+}
+
+
 
 /* Custom CSS END FOR FRONT PAGE */
 
@@ -2729,7 +2807,12 @@ section#contact .pirate_forms .contact_checkbox_wrap p {
 		width: 50%; /* Fallback */
 		width: -webkit-calc(100% / 2);
 		width: calc(100% / 2);
+		
 	}
+	.job-btn-wrap{
+		float: none;
+	}
+
 }
 @media screen and (max-width: 480px) {
 	.cbp-rfgrid li {
@@ -3610,7 +3693,7 @@ border-radius: 0 !important;
 
 .contact-us {
 	padding-bottom: 95px;
-	background: #62bb47d4;
+	background: #044d5fb5;
 }
 .contact-us .section-header .section-legend {
 	color: #fff;
